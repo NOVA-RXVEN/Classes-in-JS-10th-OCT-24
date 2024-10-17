@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(240, 229, 215);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <i><mark>Myself and More</mark></i>
+    </h1>
+    <p id="details"></p>
+    <p id="greetings"></p>
+    <p id="student1"></p>
+    <p id="student2"></p>
+    <mark id="student3"></mark>
+
+    <script>
+      class Student {
+        constructor(name, year) {
+          this.studentName = name;
+          this.name = name;
+          this.year = year;
+        }
+        static more() {
+          return "I also have some of my precious Programming friends and Sir.They are-";
+        }
+
+        present() {
+          return "Hey there!My name is " + this.studentName;
+        }
+      }
+
+      class Grade extends Student {
+        constructor(name, grade) {
+          super(name);
+          this.studentGrade = grade;
+        }
+        //student
+        age() {
+          let date = new Date();
+          return date.getFullYear() - this.year;
+        }
+
+        show() {
+          return this.present() + ". I read in " + this.studentGrade;
+        }
+      }
+      let myStudent = new Grade(
+        "Liban",
+        "Grade 7 at Mohammadpur Preparetory School and College."
+      );
+      document.getElementById("details").innerHTML = myStudent.show();
+      document.getElementById("greetings").innerHTML = Student.more();
+
+      //student
+      var sadab = new Grade("Sadab", 2010);
+      var niloy = new Grade("Niloy", 2009);
+      var nahian = new Grade("Nahian Khan (AKA The Teacher)", 1996);
+
+      //student
+      document.getElementById("student1").innerHTML =
+        "Hlw! My name is " +
+        sadab.name +
+        ".I read in class 8. And my Age is " +
+        sadab.age();
+
+      document.getElementById("student2").innerHTML =
+        "Hey there! My name is " +
+        niloy.name +
+        ".I read in class 9. And my Age is " +
+        niloy.age();
+
+      document.getElementById("student3").innerHTML =
+        "Heeeellllooowwwwww Everyyoneeeeee My name is " +
+        nahian.name +
+        ".I am a CS Engineer. And I love to teach kids Coding and Progrmming AS WELL AS collecting rare Perfumes :3" +
+        nahian.age();
+    </script>
+  </body>
+</html>
